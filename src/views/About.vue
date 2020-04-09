@@ -4,16 +4,16 @@
       <div class="row">
         <div class="card">
           <div class="card-head">
-            <h1> Welcome </h1>
+            <h1> About </h1>
           </div>
           <div class="card-body">
             <p>
               Living Open Source meetapp is an open source live video conferencing service,
               built on top of Jitsi.
               <br />
-              Jitsi is a set of open-source projects that allows you to easily
+              Jitsi is a set of open-source projects that allows you to
                build and deploy secure videoconferencing solutions.
-                At the heart of Jitsi are Jitsi Videobridge and Jitsi Meet,
+                At the heart of Jitsi, are Jitsi Videobridge and Jitsi Meet,
                  which let you have conferences on the internet,
                   while other projects in the community enable other features
                    such as audio, dial-in, recording, and simulcasting.

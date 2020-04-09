@@ -28,7 +28,7 @@
                 <label for="submit">
                 </label>
                 <input type="button" name="submit" id="submit"
-                  value="SUBMIT" class="btn btn-danger" v-on:click="join( name, room )"/>
+                  value="SUBMIT" class="btn btn-los" v-on:click="join( name, room )"/>
               </div>
             </div>
           </div>
@@ -58,12 +58,12 @@ export default {
   },
   data () {
     return {
-      name: 'user' + Math.random(10).toString(36).substr(9),
+      name: JSON.parse(localStorage.getItem('user')).name,
       room: Math.random(10000).toString(36).substr(2),
       showJoin: true,
       jitsi_domain: process.env.VUE_APP_DOMAIN,
       jvb_url: process.env.VUE_APP_JVB_URL,
-      appName: process.env.VUE_APP_NAME || 'Living Open Source MeetUp',
+      appName: process.env.VUE_APP_NAME || 'Living Open Source MeetApp',
       provider: process.env.VUE_APP_PROVIDER || 'Living Open Source'
     }
   },
@@ -132,11 +132,11 @@ export default {
 <style scoped>
 #name {
   border: none;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #f18840;
 }
 #room {
   border: none;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #f18840;
 }
 .body {
   padding-top: 200px;

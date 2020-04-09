@@ -1,0 +1,12 @@
+.btn-los {
+    background-color: #f18840;
+    color: #fff;
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    color: #f18840;
+}
