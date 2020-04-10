@@ -28,7 +28,7 @@
               </div>
             </div>
             <div class="form-group">
-              <i> {{ responseMsg }} </i>
+              <i> {{ err }} </i>
             </div>
             <div>
                 <button
@@ -57,7 +57,7 @@ export default {
     handleSubmit (e) {
       e.preventDefault()
       if (this.password.length > 0) {
-        this.$http.post('http://localhost:3000/login', {
+        this.$http.post(process.env.VUE_APP_LOGIN, {
           email: this.email,
           password: this.password
         })
@@ -85,6 +85,7 @@ export default {
           .catch(function (error) {
             console.error(error.response.statusText)
             this.err = error.response.statusText
+            alert('Wrong username/password')
           })
       }
     }
