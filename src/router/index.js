@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Register from '@/components/Register.vue'
 import Login from '@/components/Login.vue'
 import Welcome from '@/components/Welcome.vue'
+import Admin from '@/components/Admin.vue'
 import NProgress from 'nprogress'
 import '../../node_modules/nprogress/nprogress.css'
 
@@ -55,6 +56,16 @@ const routes = [
       title: 'Welcome Home',
       Auth: true
     }
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: Admin,
+    meta: {
+      title: 'Welcome back',
+      Auth: true,
+      is_admin: true
+    }
   }
 ]
 
@@ -89,7 +100,7 @@ router.beforeEach((to, from, next) => {
         if (user.is_admin === 1) {
           next()
         } else {
-          next({ name: 'userboard' })
+          next({ name: 'home' })
         }
       } else {
         next()
@@ -99,7 +110,7 @@ router.beforeEach((to, from, next) => {
     if (localStorage.getItem('jwt') == null) {
       next()
     } else {
-      next({ name: 'userboard' })
+      next({ name: 'home' })
     }
   } else {
     next()

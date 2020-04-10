@@ -4,31 +4,32 @@
       <div class="row">
         <div class="card">
           <div class="card-head">
-            <h1> About </h1>
+            <h2> &nbsp;About </h2>
           </div>
           <div class="card-body">
             <p>
-              Living Open Source meetapp is an open source live video conferencing service,
-              built on top of Jitsi.
+              Meetapp is an open source video conferencing platform,
+              built on top of Jitsi by the Living Open Source (Africa) Foundation's community.
               <br />
-              Jitsi is a set of open-source projects that allows you to
-               build and deploy secure videoconferencing solutions.
-                At the heart of Jitsi, are Jitsi Videobridge and Jitsi Meet,
-                 which let you have conferences on the internet,
-                  while other projects in the community enable other features
-                   such as audio, dial-in, recording, and simulcasting.
-                   <br />
+              The need to build an online meetup platform was necessited by the
+               the community's expansion, need to have meetups and share ideas beyond borders.
+               <br />
+               The outbreak of COVID-19 made the need even greater. Truly, necessity is the mother of
+               all inventions.
+               <br />
+               <br />
+            </p>
+            <h2>
+              "Our mission is to foster the growth and use of Open Source Software in Africa"
+            </h2> ~ Living Open Source Team
+            <br />
+            <br />
+            <p>
+              You can help out on our audacious goal to build sustainable IT solutions using
+              Open Source technologies across the continent of Africa.
               <br />
-              To get started on this project, checkout this source code
-              on
-               <a href="https://github.com/arthurkay/redsqaure-meetup.git">
-               GitHub</a>
-               <br />
-               Also checkout the underlying video conferencing tool
-               <a href="https://github.com/jitsi/docker-jitsi-meet">
-               (Jitsi on github)</a> as well.
-               <br />
-               Its an open world of open source, feel free to contribute.
+              <br />
+              Contact us on: info@livingopensource.africa
             </p>
           </div>
         </div>

@@ -59,7 +59,7 @@ export default {
   data () {
     return {
       name: JSON.parse(localStorage.getItem('user')).name,
-      room: Math.random(10000).toString(36).substr(2),
+      room: `Meetup (${Math.random(10000).toString(36).substr(2)})`,
       showJoin: true,
       jitsi_domain: process.env.VUE_APP_DOMAIN,
       jvb_url: process.env.VUE_APP_JVB_URL,

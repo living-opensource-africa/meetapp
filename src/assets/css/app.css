@@ -10,3 +10,10 @@ a {
 a:hover {
     color: #f18840;
 }
+
+.signout {
+    cursor: pointer;
+}
+.signout:hover {
+    color: #f00;
+}

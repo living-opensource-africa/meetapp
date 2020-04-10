@@ -3,15 +3,20 @@
     <div id="nav">
       <div class="top-bar shadow-lg p-3 mb-5 bg-white rounded">
         <span class="app-name">
-          <span class="text-los">  Living Open Source Africa </span>| meetapp
+          <span class="text-los" @click="home">  Living Open Source Africa </span>| meetapp
         </span>
         <span class="float-right">
           <router-link
-          to="/">Home</router-link> &nbsp;
+          v-if="auth == true"
+          to="/home">Home</router-link> &nbsp;
 
           <router-link
           v-if="auth == false"
           to="/login">Login</router-link> &nbsp;
+
+          <router-link
+          v-if="admin == true"
+          to="/admin">Admin</router-link> &nbsp;
 
           <router-link
           v-if="auth == false"
@@ -19,6 +24,11 @@
 
           <router-link
           to="/about">About</router-link> &nbsp;
+
+          <i
+          v-if="auth == true"
+          @click="logout"
+          class="fa fa-sign-out signout">SignOut</i>
         </span>
       </div>
     </div>
@@ -30,7 +40,8 @@
 export default {
   data () {
     return {
-      auth: ''
+      auth: '',
+      admin: ''
     }
   },
   mounted () {
@@ -39,12 +50,32 @@ export default {
     } else {
       this.auth = false
     }
+
+    if (JSON.parse(localStorage.getItem('user')).is_admin === 1) {
+      this.admin = true
+    } else {
+      this.admin = false
+    }
+  },
+  methods: {
+    home (e) {
+      this.$router.push('/')
+    },
+    logout (e) {
+      e.preventDefault()
+      localStorage.clear()
+      this.$router.push('/')
+      window.location.reload()
+    }
   }
 }
 </script>
 <style>
 .text-los {
   color:#f18840;
+}
+.text-los:hover {
+  cursor: pointer;
 }
 .top-bar {
   height: 80px;

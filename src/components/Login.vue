@@ -27,6 +27,9 @@
                   class="form-control">
               </div>
             </div>
+            <div class="form-group">
+              <i> {{ responseMsg }} </i>
+            </div>
             <div>
                 <button
                 type="submit"
@@ -46,7 +49,8 @@ export default {
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      err: ''
     }
   },
   methods: {
@@ -66,17 +70,21 @@ export default {
               this.$emit('loggedIn')
               if (this.$route.params.nextUrl != null) {
                 this.$router.push(this.$route.params.nextUrl)
+                window.location.reload()
               } else {
                 if (isAdmin === 1) {
                   this.$router.push('admin')
+                  window.location.reload()
                 } else {
                   this.$router.push('home')
+                  window.location.reload()
                 }
               }
             }
           })
           .catch(function (error) {
-            console.error(error.response)
+            console.error(error.response.statusText)
+            this.err = error.response.statusText
           })
       }
     }

@@ -21,17 +21,6 @@
             <div>
                 <input id="password-confirm" type="password" v-model="password_confirmation" required>
             </div>
-
-            <label for="password-confirm">Is this an administrator account?</label>
-            <div>
-                <select
-                v-model="is_admin"
-                class="btn btn-los">
-                    <option value=1>Yes</option>
-                    <option selected value=0>No</option>
-                </select>
-            </div>
-
             <div>
                 <button
                 type="submit"
@@ -76,8 +65,10 @@ export default {
               this.$emit('loggedIn')
               if (this.$route.params.nextUrl != null) {
                 this.$router.push(this.$route.params.nextUrl)
+                window.location.reload()
               } else {
                 this.$router.push('home')
+                window.location.reload()
               }
             }
           })
