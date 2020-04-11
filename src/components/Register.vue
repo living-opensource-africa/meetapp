@@ -49,6 +49,11 @@ export default {
   methods: {
     handleSubmit (e) {
       e.preventDefault()
+      const options = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
       if (this.password === this.password_confirmation && this.password.length > 0) {
         let url = process.env.VUE_APP_REGISTER
         if (this.is_admin != null || this.is_admin === 1) url = 'http://localhost:3000/register-admin'
@@ -57,7 +62,7 @@ export default {
           email: this.email,
           password: this.password,
           is_admin: this.is_admin
-        })
+        }, options)
           .then(response => {
             localStorage.setItem('user', JSON.stringify(response.data.user))
             localStorage.setItem('jwt', response.data.token)
@@ -73,7 +78,7 @@ export default {
             }
           })
           .catch(error => {
-            console.error(error)
+            console.log(error)
             alert('Unable to register')
           })
       } else {

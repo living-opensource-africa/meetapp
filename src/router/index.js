@@ -5,6 +5,7 @@ import Register from '@/components/Register.vue'
 import Login from '@/components/Login.vue'
 import Welcome from '@/components/Welcome.vue'
 import Admin from '@/components/Admin.vue'
+import NotFound from '@/components/NotFound.vue'
 import NProgress from 'nprogress'
 import '../../node_modules/nprogress/nprogress.css'
 
@@ -65,6 +66,14 @@ const routes = [
       title: 'Welcome back',
       Auth: true,
       is_admin: true
+    }
+  },
+  {
+    path: '*',
+    name: 'wildcat',
+    component: NotFound,
+    meta: {
+      title: 'Page Not Found'
     }
   }
 ]

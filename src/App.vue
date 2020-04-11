@@ -41,7 +41,8 @@ export default {
   data () {
     return {
       auth: '',
-      admin: ''
+      admin: '',
+      isMobile: this.$isMobile()
     }
   },
   mounted () {

@@ -56,11 +56,16 @@ export default {
   methods: {
     handleSubmit (e) {
       e.preventDefault()
+      const options = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
       if (this.password.length > 0) {
         this.$http.post(process.env.VUE_APP_LOGIN, {
           email: this.email,
           password: this.password
-        })
+        }, options)
           .then(response => {
             const isAdmin = response.data.user.is_admin
             localStorage.setItem('user', JSON.stringify(response.data.user))
@@ -82,10 +87,9 @@ export default {
               }
             }
           })
-          .catch(function (error) {
-            console.error(error.response.statusText)
-            this.err = error.response.statusText
+          .catch(error => {
             alert('Wrong username/password')
+            console.log(error)
           })
       }
     }

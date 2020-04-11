@@ -6,6 +6,8 @@
       </div>
       <div class="col-md-12 row">
         <div class="col-md-6 mission">
+        <br />
+        <br />
           <h2>
             Our mission is to foster the growth and use of Open Source Software in Africa!
           </h2>
@@ -29,8 +31,11 @@ export default {
 </script>
 
 <style scoped>
-h2 {
-  position: absolute;
+@media screen and (max-width: 768) {
+  h2 {
+  position: relative;
   bottom: 5px ;
 }
+}
+
 </style>

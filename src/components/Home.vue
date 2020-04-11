@@ -89,11 +89,17 @@ export default {
       }
       })
 
-      prom.then(result => {
-        this.makeAPICall(name, room)
-      }, err => {
-        alert('Err '+err.message)
-      })
+      // User alert for mobile access
+      if (this.$isMobile()) {
+        alert('Sorry, mobile devices are not supported yet')
+      }
+      else {
+        prom.then(result => {
+          this.makeAPICall(name, room)
+        }, err => {
+          alert('Err '+err.message)
+        })
+      }
     },
     makeAPICall(name, room) {
       const domain = this.jitsi_domain
